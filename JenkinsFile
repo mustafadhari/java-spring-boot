@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        git branch: 'main', url: 'https://github.com/mustafadhari/java-spring-boot.git'
+        //git branch: 'main', url: 'https://github.com/mustafadhari/java-spring-boot.git'
       }
     }
     stage('Build and Test') {
@@ -53,6 +53,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+		    cd java-spring-boot
                     git config user.email "mdhariwala033@gmail.com"
                     git config user.name "mustafadhari"
                     BUILD_NUMBER=${BUILD_NUMBER}
