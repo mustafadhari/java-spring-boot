@@ -53,8 +53,6 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-		    find .
-		    cd java-spring-boot
                     git config user.email "mdhariwala033@gmail.com"
                     git config user.name "mustafadhari"
                     BUILD_NUMBER=${BUILD_NUMBER}
