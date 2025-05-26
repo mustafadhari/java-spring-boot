@@ -53,6 +53,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+		    cd /home/java-spring-boot/
 		    pwd
                     git config user.email "mdhariwala033@gmail.com"
                     git config user.name "mustafadhari"
