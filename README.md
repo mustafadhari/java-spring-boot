@@ -89,19 +89,14 @@ The goal of this project is to implement an end-to-end DevOps pipeline with:
 
 ```bash
 git clone https://github.com/mustafadhari/java-spring-boot.git
-cd devops-java-cicd-pipeline
 ````
 
 ### Configure Jenkins
 
 * Create a Jenkins pipeline project
 * Use the included `Jenkinsfile`
-* Add credentials and environment variables:
-
-  * `DOCKER_HUB_USERNAME`
-  * `DOCKER_HUB_PASSWORD`
-  * `SONARQUBE_TOKEN` (if using authentication)
-  * GitHub credentials (for SCM and GitOps repo)
+* Install Docker pipeline & Sonarqube Scanner plugins
+* Add credentials
 
 ### Docker Image Build & Push
 
@@ -124,21 +119,19 @@ docker push yourusername/java-app:latest
 ## Folder Structure
 
 ```
-devops-java-cicd-pipeline/
+java-spring-boot/
 ├── Jenkinsfile
 ├── Dockerfile
-├── k8s-manifests/
+├── spring-boot-app-manifests/
 │   ├── deployment.yaml
 │   ├── service.yaml
-├── sonarqube/
-│   └── docker-compose.yml
 ├── src/
 │   └── main/
 │       └── java/...
 ├── pom.xml
 ├── README.md
 └── docs/
-    └── architecture.png
+    └── Diagram.png
 ```
 
 ---
