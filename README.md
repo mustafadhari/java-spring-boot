@@ -103,14 +103,6 @@ cd devops-java-cicd-pipeline
   * `SONARQUBE_TOKEN` (if using authentication)
   * GitHub credentials (for SCM and GitOps repo)
 
-### Run SonarQube
-
-```bash
-docker-compose -f sonarqube/docker-compose.yml up -d
-```
-
-> Ensure `sonar-scanner` is available inside Jenkins agent or use a container with it preinstalled.
-
 ### Docker Image Build & Push
 
 Handled automatically by Jenkins pipeline:
